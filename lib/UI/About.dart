@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/global/data.dart';
 
 import '../Widget/CustomText.dart';
 
@@ -77,22 +78,20 @@ class About extends StatelessWidget {
 
                 //About me desc
                 Wrap(
-                  children: const [
+                  children: [
                     CustomText(
-                      text:
-                          "Hello! I'm Tushar, a Freelancer based in Nashik, IN.\n\nI enjoy creating things that live on the internet, whether that be websites, applications, or anything in between. My goal is to always build products that provide pixel-perfect, performant experiences.\n\n",
+                      text: about,
                       textsize: 16.0,
-                      color: Color(0xff828DAA),
+                      color: const Color(0xff828DAA),
                       letterSpacing: 0.75,
                     ),
                     CustomText(
-                      text:
-                          "Shortly currently, I am purshuing my Bachlor's degree in Computter science and Engineering at University of Pune, as well as doing freelancing where I work on a wide variety of interesting and meaningful projects on a daily basis.\n\n",
+                      text: about2,
                       textsize: 16.0,
-                      color: Color(0xff828DAA),
+                      color: const Color(0xff828DAA),
                       letterSpacing: 0.75,
                     ),
-                    CustomText(
+                    const CustomText(
                       text:
                           "Here are a few technologies I've been working with recently:\n\n",
                       textsize: 16.0,
@@ -114,7 +113,7 @@ class About extends StatelessWidget {
                         child: Column(
                           children: [
                             technology(context, "Dart"),
-                            technology(context, "Flutter"),
+                            technology(context, "Flutter/Android/IOS"),
                             technology(context, "Firebase"),
                             technology(context, "UI/UX (Adobe Xd)"),
                           ],
@@ -125,7 +124,7 @@ class About extends StatelessWidget {
                         height: size.height * 0.15,
                         child: Column(
                           children: [
-                            technology(context, "C/C++, Java."),
+                            technology(context, "Python"),
                             technology(context, "HTML & (S)CSS"),
                             technology(context, "MYSQL"),
                             technology(context, "Git - Github"),
@@ -224,7 +223,7 @@ class _CustomImageAnimationState extends State<CustomImageAnimation> {
             color: Colors.black54,
             child: const Image(
               fit: BoxFit.cover,
-              image: AssetImage("images/pic1.jpeg"),
+              image: AssetImage("images/pic1.jpg"),
             ),
           ),
           Container(

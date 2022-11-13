@@ -16,7 +16,7 @@ class _WorkState extends State<Work> {
     return ConstrainedBox(
       constraints: BoxConstraints.tightFor(
         width: size.width,
-        height: size.height * 1.4,
+        height: size.height * 1.5,
       ),
       child: Column(
         children: [
@@ -56,7 +56,7 @@ class _WorkState extends State<Work> {
               Expanded(
                 flex: 1,
                 child: SizedBox(
-                    height: size.height * 1.2,
+                    height: size.height,
                     //color: Colors.indigo,
                     child: Stack(
                       children: [
@@ -74,29 +74,29 @@ class _WorkState extends State<Work> {
                               child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: const [
-                              CircleAvatar(
-                                backgroundColor: Colors.pink,
-                                child: FaIcon(FontAwesomeIcons.laptopHouse,
-                                    color: Colors.white),
-                              ),
-                              CircleAvatar(
-                                backgroundColor: Colors.red,
-                                child: FaIcon(FontAwesomeIcons.freeCodeCamp,
-                                    color: Colors.white),
-                              ),
-                              CircleAvatar(
-                                backgroundColor: Colors.brown,
-                                child: FaIcon(FontAwesomeIcons.laptopCode,
-                                    color: Colors.white),
-                              ),
+                              // CircleAvatar(
+                              //   backgroundColor: Colors.pink,
+                              //   child: FaIcon(FontAwesomeIcons.laptopHouse,
+                              //       color: Colors.white),
+                              // ),
+                              // CircleAvatar(
+                              //   backgroundColor: Colors.red,
+                              //   child: FaIcon(FontAwesomeIcons.freeCodeCamp,
+                              //       color: Colors.white),
+                              // ),
+                              // CircleAvatar(
+                              //   backgroundColor: Colors.brown,
+                              //   child: FaIcon(FontAwesomeIcons.laptopCode,
+                              //       color: Colors.white),
+                              // ),
                               CircleAvatar(
                                 backgroundColor: Colors.deepOrange,
-                                child: FaIcon(FontAwesomeIcons.coffee,
+                                child: FaIcon(FontAwesomeIcons.code,
                                     color: Colors.white),
                               ),
                               CircleAvatar(
                                 backgroundColor: Colors.deepPurple,
-                                child: FaIcon(FontAwesomeIcons.dev,
+                                child: FaIcon(FontAwesomeIcons.php,
                                     color: Colors.white),
                               ),
                             ],
@@ -108,8 +108,8 @@ class _WorkState extends State<Work> {
               Expanded(
                   flex: 4,
                   child: SizedBox(
-                    height: size.height * 1.2,
-                    child: WorkBox(),
+                    height: size.height,
+                    child: const WorkBox(),
                   ))
             ],
           )

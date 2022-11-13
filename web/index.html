@@ -23,13 +23,13 @@
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="portfolio">
+  <meta name="apple-mobile-web-app-title" content="Cloderaldo Pampanga">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>portfolio</title>
+  <title>Cloderaldo Pampanga</title>
   <link rel="manifest" href="manifest.json">
 
   <script>
@@ -39,8 +39,8 @@
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
 </head>
-<body>
-  <script>
+  <body>
+    <script>
     window.addEventListener('load', function(ev) {
       // Download main.dart.js
       _flutter.loader.loadEntrypoint({
@@ -53,6 +53,49 @@
         return appRunner.runApp();
       });
     });
+  </script>
+  <script type="module">
+
+    // Import the functions you need from the SDKs you need
+  
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+  
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-analytics.js";
+  
+    // TODO: Add SDKs for Firebase products that you want to use
+  
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+  
+    // Your web app's Firebase configuration
+  
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  
+    const firebaseConfig = {
+  
+      apiKey: "AIzaSyB64uNVNALPyq6YuV_-SyDweCybF3GzfTk",
+  
+      authDomain: "cloderaldo-a63db.firebaseapp.com",
+  
+      projectId: "cloderaldo-a63db",
+  
+      storageBucket: "cloderaldo-a63db.appspot.com",
+  
+      messagingSenderId: "1054894655190",
+  
+      appId: "1:1054894655190:web:05cd611f7924ce4d46ab77",
+  
+      measurementId: "G-CMF4HQDWCV"
+  
+    };
+  
+  
+    // Initialize Firebase
+  
+    const app = initializeApp(firebaseConfig);
+  
+    const analytics = getAnalytics(app);
+  
   </script>
 </body>
 </html>

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
-
-import 'HomePage.dart';
-import 'MobileHome.dart';
+import 'package:portfolio/UI/HomePage.dart';
+import 'package:portfolio/UI/MobileHome.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -14,14 +12,8 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    final isWebMobile = kIsWeb &&
-        (defaultTargetPlatform == TargetPlatform.iOS ||
-            defaultTargetPlatform == TargetPlatform.android);
-
-    if (isWebMobile) {
-      return MobileHome();
-    } else {
-      return HomePage();
-    }
+    return LayoutBuilder(
+        builder: (context, size) =>
+            size.maxWidth < 950 ? MobileHome() : HomePage());
   }
 }

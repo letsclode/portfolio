@@ -13,7 +13,7 @@ class AppBarTitle extends StatelessWidget {
     return GestureDetector(
       child: Padding(
         padding: const EdgeInsets.symmetric(
-          vertical: 14.0,
+          vertical: 10.0,
         ),
         child: Text(
           text,

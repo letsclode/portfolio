@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
+import 'package:portfolio/global/data.dart';
 import '../Model/Method.dart';
 import '../Widget/CustomText.dart';
 import '../Widget/MobileProject.dart';
@@ -34,31 +33,32 @@ class _MobileHomeState extends State<MobileHome> {
     );
   }
 
+  var method = Method();
+
   @override
   Widget build(BuildContext context) {
-    Method method = Method();
     final Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: const Color(0xff0A192F),
       endDrawer: Drawer(
           elevation: 6.0,
           child: Column(
-            children: const [
+            children: [
               UserAccountsDrawerHeader(
-                  currentAccountPicture: CircleAvatar(
+                  currentAccountPicture: const CircleAvatar(
                     child: Icon(Icons.person),
                   ),
-                  accountName: Text("Tushar Nikam"),
-                  accountEmail: Text("champ96k@gmail.com")),
-              ListTile(
+                  accountName: Text(name),
+                  accountEmail: Text(email)),
+              const ListTile(
                 title: Text("Share"),
                 leading: Icon(Icons.share),
               ),
-              ListTile(
+              const ListTile(
                 leading: Icon(Icons.group),
                 title: Text("About"),
               ),
-              Expanded(
+              const Expanded(
                 child: Text("Version 1.0.1"),
               )
             ],
@@ -85,26 +85,26 @@ class _MobileHomeState extends State<MobileHome> {
               SizedBox(
                 height: size.height * 0.08,
               ),
-              const CustomText(
-                text: "Hi, my name is",
+              CustomText(
+                text: aka,
                 textsize: 16.0,
-                color: Color(0xff41FBDA),
+                color: const Color(0xff41FBDA),
                 letterSpacing: 3.0,
               ),
               SizedBox(
                 height: size.height * 0.02,
               ),
-              const CustomText(
-                text: "Tushar Nikam.",
+              CustomText(
+                text: name,
                 textsize: 52.0,
-                color: Color(0xffCCD6F6),
+                color: const Color(0xffCCD6F6),
                 fontWeight: FontWeight.w900,
               ),
               SizedBox(
                 height: size.height * 0.04,
               ),
               CustomText(
-                text: "I build things for the Android and web.",
+                text: position,
                 textsize: 42.0,
                 color: const Color(0xffCCD6F6).withOpacity(0.6),
                 fontWeight: FontWeight.w700,
@@ -115,10 +115,10 @@ class _MobileHomeState extends State<MobileHome> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: Wrap(
-                  children: const [
+                  children: [
                     Text(
-                      "I'm a freelancer based in Nashik, IN specializing in building (and occasionally designing) exceptional websites, applications, and everything in between.",
-                      style: TextStyle(
+                      about,
+                      style: const TextStyle(
                         color: Colors.grey,
                         fontSize: 15.0,
                         letterSpacing: 2.75,
@@ -149,7 +149,7 @@ class _MobileHomeState extends State<MobileHome> {
                     onPressed: () {
                       method.launchEmail();
                     },
-                    hoverColor: Colors.green,
+                    hoverColor: Colors.white10,
                     child: const Text(
                       "Get In Touch",
                       style: TextStyle(
@@ -210,24 +210,22 @@ class _MobileHomeState extends State<MobileHome> {
 
                       //About me desc
                       Wrap(
-                        children: const [
+                        children: [
                           CustomText(
-                            text:
-                                "Hello! I'm Tushar, a Freelancer based in Nashik, IN.\nI enjoy creating things that live on the internet, whether that be websites, applications, or anything in between. My goal is to always build products that provide pixel-perfect, performant experiences.\n",
+                            text: about,
                             textsize: 16.0,
-                            color: Color(0xff828DAA),
+                            color: const Color(0xff828DAA),
                             fontWeight: FontWeight.w500,
                             letterSpacing: 0.75,
                           ),
                           CustomText(
-                            text:
-                                "Shortly currently, I am purshuing my Bachlor's degree in Computter science and Engineering at University of Pune, as well as doing freelancing where I work on a wide variety of interesting and meaningful projects on a daily basis.\n",
+                            text: about2,
                             textsize: 16.0,
-                            color: Color(0xff828DAA),
+                            color: const Color(0xff828DAA),
                             fontWeight: FontWeight.w500,
                             letterSpacing: 0.75,
                           ),
-                          CustomText(
+                          const CustomText(
                             text:
                                 "Here are a few technologies I've been working with recently:\n\n",
                             textsize: 16.0,
@@ -253,7 +251,7 @@ class _MobileHomeState extends State<MobileHome> {
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 technology(context, "Dart"),
-                                technology(context, "Flutter"),
+                                technology(context, "Flutter/Android/IOS"),
                                 technology(context, "Firebase"),
                                 technology(context, "UI/UX (Adobe XD)"),
                               ],
@@ -262,7 +260,7 @@ class _MobileHomeState extends State<MobileHome> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                technology(context, "C/C++"),
+                                technology(context, "Python"),
                                 technology(context, "HTML, & (S)Css"),
                                 technology(context, "MYSQL"),
                                 technology(context, "Java"),
@@ -308,11 +306,6 @@ class _MobileHomeState extends State<MobileHome> {
                           fit: BoxFit.cover,
                           image: AssetImage("images/pic1.jpeg"),
                         ),
-                      ),
-                      Container(
-                        height: size.height * 0.5,
-                        width: size.width * 0.6,
-                        color: const Color(0xff61F9D5).withOpacity(0.5),
                       ),
                     ],
                   ),
@@ -385,314 +378,20 @@ class _MobileHomeState extends State<MobileHome> {
                 ],
               ),
 
-              SizedBox(
-                height: size.height * 0.07,
+              MobileProject(
+                ontab: () {},
+                image: "images/pic9.png",
+                title: "Budgeting App",
               ),
 
               MobileProject(
                 ontab: () {},
-                image: "images/pic9.jpg",
+                image: "images/pic2.png",
+                title: "Booking App",
               ),
 
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              MobileProject(
-                ontab: () {},
-                image: "images/pic2.jpg",
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              MobileProject(
-                ontab: () {},
-                image: "images/pic3.png",
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              MobileProject(
-                ontab: () {},
-                image: "images/pic4.jpg",
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              MobileProject(
-                ontab: () {},
-                image: "images/pic5.jpg",
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              MobileProject(
-                ontab: () {},
-                image: "images/pic6.jpg",
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              MobileProject(
-                ontab: () {},
-                image: "images/pic7.jpg",
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              MobileProject(
-                ontab: () {},
-                image: "images/pic8.jpg",
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              MobileProject(
-                ontab: () {},
-                image: "images/pic10.jpg",
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              MobileProject(
-                ontab: () {},
-                image: "images/pic11.jpg",
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              MobileProject(
-                ontab: () {},
-                image: "images/pic102.gif",
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              MobileProject(
-                ontab: () {},
-                image: "images/pic104.png",
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              MobileProject(
-                ontab: () {},
-                image: "images/pic105.png",
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              MobileProject(
-                ontab: () {},
-                image: "images/pic106.png",
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              MobileProject(
-                ontab: () {},
-                image: "images/pic107.jfif",
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              MobileProject(
-                ontab: () {},
-                image: "images/pic108.jfif",
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              MobileProject(
-                ontab: () {},
-                image: "images/pic109.jfif",
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              MobileProject(
-                ontab: () {},
-                image: "images/pic110.jfif",
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              Row(
-                children: [
-                  SizedBox(
-                    width: size.width * 0.42,
-                    height: size.height * 0.6,
-                    child: const Image(
-                      image: AssetImage("images/pic101.png"),
-                    ),
-                  ),
-                  const Spacer(),
-                  SizedBox(
-                    width: size.width * 0.42,
-                    height: size.height * 0.6,
-                    child: const Image(
-                      image: AssetImage("images/pic103.png"),
-                    ),
-                  ),
-                ],
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              Row(
-                children: [
-                  SizedBox(
-                    width: size.width * 0.44,
-                    height: size.height * 0.6,
-                    child: const Image(
-                      image: AssetImage("images/pic111.gif"),
-                    ),
-                  ),
-                  const Spacer(),
-                  SizedBox(
-                    width: size.width * 0.44,
-                    height: size.height * 0.6,
-                    child: const Image(
-                      image: AssetImage("images/pic113.jfif"),
-                    ),
-                  ),
-                ],
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              Row(
-                children: [
-                  SizedBox(
-                    width: size.width * 0.44,
-                    height: size.height * 0.6,
-                    child: const Image(
-                      image: AssetImage("images/pic114.png"),
-                    ),
-                  ),
-                  const Spacer(),
-                  SizedBox(
-                    width: size.width * 0.44,
-                    height: size.height * 0.6,
-                    child: const Image(
-                      image: AssetImage("images/pic115.png"),
-                    ),
-                  ),
-                ],
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              Row(
-                children: [
-                  SizedBox(
-                    width: size.width * 0.44,
-                    height: size.height * 0.6,
-                    child: const Image(
-                      image: AssetImage("images/pic116.jfif"),
-                    ),
-                  ),
-                  const Spacer(),
-                  SizedBox(
-                    width: size.width * 0.44,
-                    height: size.height * 0.6,
-                    child: const Image(
-                      image: AssetImage("images/pic117.png"),
-                    ),
-                  ),
-                ],
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              Row(
-                children: [
-                  SizedBox(
-                    width: size.width * 0.44,
-                    height: size.height * 0.6,
-                    child: const Image(
-                      image: AssetImage("images/pic118.jpeg"),
-                    ),
-                  ),
-                  const Spacer(),
-                  SizedBox(
-                    width: size.width * 0.44,
-                    height: size.height * 0.6,
-                    child: const Image(
-                      image: AssetImage("images/pic119.jpeg"),
-                    ),
-                  ),
-                ],
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
-              ),
-
-              Row(
-                children: [
-                  SizedBox(
-                    width: size.width * 0.44,
-                    height: size.height * 0.6,
-                    child: const Image(
-                      image: AssetImage("images/pic120.png"),
-                    ),
-                  ),
-                  const Spacer(),
-                  SizedBox(
-                    width: size.width * 0.44,
-                    height: size.height * 0.6,
-                    child: const Image(
-                      image: AssetImage("images/pic121.png"),
-                    ),
-                  ),
-                ],
-              ),
-
-              SizedBox(
-                height: size.height * 0.07,
+              const SizedBox(
+                height: 150,
               ),
 
               FittedBox(
@@ -727,7 +426,7 @@ class _MobileHomeState extends State<MobileHome> {
                         alignment: WrapAlignment.center,
                         children: [
                           Text(
-                            "Although I'm currently looking for SDE-1 opportunities, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
+                            connect,
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               color: Colors.white.withOpacity(0.4),
@@ -773,77 +472,77 @@ class _MobileHomeState extends State<MobileHome> {
                 ),
               ),
 
-              SizedBox(
-                height: size.height * 0.07,
+              const SizedBox(
+                height: 150,
               ),
 
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  IconButton(
-                    icon: const Icon(
-                      FontAwesomeIcons.github,
-                      color: Colors.white,
-                      size: 15.0,
-                    ),
-                    onPressed: () {
-                      method.launchMyURL("https://github.com/champ96k");
-                    },
-                  ),
-                  IconButton(
-                    icon: const Icon(
-                      FontAwesomeIcons.linkedin,
-                      color: Colors.white,
-                      size: 15.0,
-                    ),
-                    onPressed: () {
-                      method.launchMyURL(
-                          "https://www.linkedin.com/in/tushar-nikam-a29a97131/");
-                    },
-                  ),
-                  IconButton(
-                    icon: const Icon(
-                      FontAwesomeIcons.twitter,
-                      color: Colors.white,
-                      size: 15.0,
-                    ),
-                    onPressed: () {
-                      method.launchMyURL("https://twitter.com/champ_96k");
-                    },
-                  ),
-                  IconButton(
-                    icon: const Icon(
-                      Icons.mail,
-                      color: Colors.white,
-                      size: 15.0,
-                    ),
-                    onPressed: () {
-                      method.launchEmail();
-                    },
-                  )
-                ],
-              ),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+              //   children: [
+              //     IconButton(
+              //       icon: const Icon(
+              //         FontAwesomeIcons.github,
+              //         color: Colors.white,
+              //         size: 15.0,
+              //       ),
+              //       onPressed: () {
+              //         method.launchMyURL("https://github.com/champ96k");
+              //       },
+              //     ),
+              //     IconButton(
+              //       icon: const Icon(
+              //         FontAwesomeIcons.linkedin,
+              //         color: Colors.white,
+              //         size: 15.0,
+              //       ),
+              //       onPressed: () {
+              //         method.launchMyURL(
+              //             "https://www.linkedin.com/in/tushar-nikam-a29a97131/");
+              //       },
+              //     ),
+              //     IconButton(
+              //       icon: const Icon(
+              //         FontAwesomeIcons.twitter,
+              //         color: Colors.white,
+              //         size: 15.0,
+              //       ),
+              //       onPressed: () {
+              //         method.launchMyURL("https://twitter.com/champ_96k");
+              //       },
+              //     ),
+              //     IconButton(
+              //       icon: const Icon(
+              //         Icons.mail,
+              //         color: Colors.white,
+              //         size: 15.0,
+              //       ),
+              //       onPressed: () {
+              //         method.launchEmail();
+              //       },
+              //     )
+              //   ],
+              // ),
 
-              SizedBox(
-                height: size.height * 0.07,
-              ),
+              // SizedBox(
+              //   height: size.height * 0.07,
+              // ),
 
-              //Footer
-              Container(
-                alignment: Alignment.center,
-                height: MediaQuery.of(context).size.height / 6,
-                width: MediaQuery.of(context).size.width,
-                //color: Colors.white,
-                child: Text(
-                  "Designed & Built by Tushar Nikam 💙 Flutter",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.white.withOpacity(0.4),
-                    letterSpacing: 1.75,
-                    fontSize: 14.0,
-                  ),
-                ),
-              ),
+              // //Footer
+              // Container(
+              //   alignment: Alignment.center,
+              //   height: MediaQuery.of(context).size.height / 6,
+              //   width: MediaQuery.of(context).size.width,
+              //   //color: Colors.white,
+              //   child: Text(
+              //     "Designed & Built by Tushar Nikam 💙 Flutter",
+              //     textAlign: TextAlign.center,
+              //     style: TextStyle(
+              //       color: Colors.white.withOpacity(0.4),
+              //       letterSpacing: 1.75,
+              //       fontSize: 14.0,
+              //     ),
+              //   ),
+              // ),
             ],
           ),
         ),
