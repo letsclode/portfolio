@@ -386,13 +386,13 @@ class _MobileHomeState extends State<MobileHome> {
 
               MobileProject(
                 ontab: () {},
-                image: "images/pic9.png",
+                image: "images/work2.png",
                 title: "Budgeting App",
               ),
 
               MobileProject(
                 ontab: () {},
-                image: "images/pic2.png",
+                image: "images/work1.png",
                 title: "Booking App",
               ),
 

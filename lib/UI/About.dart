@@ -223,7 +223,7 @@ class _CustomImageAnimationState extends State<CustomImageAnimation> {
             height: size.height / 2,
             width: size.width / 5,
             color: Colors.black54,
-            child: Image.asset("images/pic1.jpg"),
+            child: Image.asset("images/profile.jpg"),
           ),
           Container(
             height: size.height / 2,
