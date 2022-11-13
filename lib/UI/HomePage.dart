@@ -87,7 +87,11 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: Row(
                     children: [
-                      Image.asset("images/logo.png"),
+                      Image.asset(
+                        "images/logo.png",
+                        width: 60,
+                        height: 60,
+                      ),
                       const Spacer(),
                       Expanded(
                         flex: 3,
@@ -468,25 +472,6 @@ class _HomePageState extends State<HomePage> {
                                         ],
                                       ),
                                     ),
-
-                                    //Footer
-                                    Container(
-                                      alignment: Alignment.center,
-                                      height:
-                                          MediaQuery.of(context).size.height /
-                                              6,
-                                      width: MediaQuery.of(context).size.width -
-                                          100,
-                                      //color: Colors.white,
-                                      child: Text(
-                                        "Credit to Tushar Nikam for open source porfolio",
-                                        style: TextStyle(
-                                          color: Colors.white.withOpacity(0.4),
-                                          letterSpacing: 1.75,
-                                          fontSize: 14.0,
-                                        ),
-                                      ),
-                                    ),
                                   ],
                                 ),
                               ),
@@ -499,7 +484,6 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.07,
                     height: MediaQuery.of(context).size.height - 82,
-                    //color: Colors.orange,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [

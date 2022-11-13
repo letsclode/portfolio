@@ -116,6 +116,7 @@ class About extends StatelessWidget {
                             technology(context, "Flutter/Android/IOS"),
                             technology(context, "Firebase"),
                             technology(context, "UI/UX (Adobe Xd)"),
+                            technology(context, "Laravel"),
                           ],
                         ),
                       ),
@@ -128,6 +129,7 @@ class About extends StatelessWidget {
                             technology(context, "HTML & (S)CSS"),
                             technology(context, "MYSQL"),
                             technology(context, "Git - Github"),
+                            technology(context, "php"),
                           ],
                         ),
                       )
@@ -221,10 +223,7 @@ class _CustomImageAnimationState extends State<CustomImageAnimation> {
             height: size.height / 2,
             width: size.width / 5,
             color: Colors.black54,
-            child: const Image(
-              fit: BoxFit.cover,
-              image: AssetImage("images/pic1.jpg"),
-            ),
+            child: Image.asset("images/pic1.jpg"),
           ),
           Container(
             height: size.height / 2,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/global/data.dart';
 import '../Model/Method.dart';
 import '../Widget/CustomText.dart';
@@ -66,13 +67,11 @@ class _MobileHomeState extends State<MobileHome> {
       appBar: AppBar(
         backgroundColor: const Color(0xff0A192F),
         elevation: 0.0,
-        title: IconButton(
-          icon: const Icon(
-            Icons.change_history,
-            size: 32.0,
-            color: Color(0xff64FFDA),
-          ),
-          onPressed: () {},
+        toolbarHeight: 80,
+        title: Image.asset(
+          "images/logo.png",
+          width: 60,
+          height: 60,
         ),
       ),
       body: SingleChildScrollView(
@@ -82,9 +81,7 @@ class _MobileHomeState extends State<MobileHome> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(
-                height: size.height * 0.08,
-              ),
+              const SizedBox(height: 20),
               CustomText(
                 text: aka,
                 textsize: 16.0,
@@ -115,10 +112,10 @@ class _MobileHomeState extends State<MobileHome> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: Wrap(
-                  children: [
+                  children: const [
                     Text(
-                      about,
-                      style: const TextStyle(
+                      "Specializing in \nbuilding applications, \nwebsites, and everything in between.",
+                      style: TextStyle(
                         color: Colors.grey,
                         fontSize: 15.0,
                         letterSpacing: 2.75,
@@ -131,32 +128,38 @@ class _MobileHomeState extends State<MobileHome> {
               SizedBox(
                 height: size.height * 0.06,
               ),
-              Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(4.0),
-                ),
-                color: const Color(0xff64FFDA),
-                child: Container(
-                  alignment: Alignment.center,
-                  margin: const EdgeInsets.all(0.75),
-                  height: 56.0,
-                  width: 160.0,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4.0),
-                    color: const Color(0xff0A192F),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 16.0),
+                child: Card(
+                  elevation: 4.0,
+                  color: const Color(0xff64FFDA),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(6.0),
                   ),
-                  child: MaterialButton(
-                    onPressed: () {
-                      method.launchEmail();
-                    },
-                    hoverColor: Colors.white10,
-                    child: const Text(
-                      "Get In Touch",
-                      style: TextStyle(
-                        color: Color(0xff64FFDA),
-                        letterSpacing: 2.75,
-                        wordSpacing: 1.0,
-                        fontSize: 15.0,
+                  child: Container(
+                    margin: const EdgeInsets.all(0.85),
+                    height: size.height * 0.07,
+                    width: size.height * 0.20,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      color: const Color(0xff0A192F),
+                      borderRadius: BorderRadius.circular(6.0),
+                    ),
+                    child: TextButton(
+                      onPressed: () {
+                        method.launchMyURL(
+                            "https://docs.google.com/document/d/1QQmwTcfu5YFUV_4_5nrwBBmpRJS7E-zK/edit?usp=sharing&ouid=115541674412941090557&rtpof=true&sd=true");
+                      },
+                      child: const Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 8.0,
+                        ),
+                        child: Text(
+                          "Resume",
+                          style: TextStyle(
+                            color: Color(0xff64FFDA),
+                          ),
+                        ),
                       ),
                     ),
                   ),
@@ -254,6 +257,7 @@ class _MobileHomeState extends State<MobileHome> {
                                 technology(context, "Flutter/Android/IOS"),
                                 technology(context, "Firebase"),
                                 technology(context, "UI/UX (Adobe XD)"),
+                                technology(context, "Laravel"),
                               ],
                             ),
                             Column(
@@ -264,6 +268,7 @@ class _MobileHomeState extends State<MobileHome> {
                                 technology(context, "HTML, & (S)Css"),
                                 technology(context, "MYSQL"),
                                 technology(context, "Java"),
+                                technology(context, "php"),
                               ],
                             ),
                           ],
@@ -321,6 +326,7 @@ class _MobileHomeState extends State<MobileHome> {
                     textsize: 20.0,
                     color: Color(0xff61F9D5),
                     fontWeight: FontWeight.w700,
+                    //color: Colors.orange,
                   ),
                   const SizedBox(
                     width: 12.0,
@@ -439,29 +445,34 @@ class _MobileHomeState extends State<MobileHome> {
                       SizedBox(
                         height: size.height * 0.07,
                       ),
-                      Card(
-                        elevation: 4.0,
-                        color: const Color(0xff64FFDA),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(6.0),
-                        ),
-                        child: Container(
-                          margin: const EdgeInsets.all(0.85),
-                          height: size.height * 0.10,
-                          width: size.width * 0.30,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            color: const Color(0xff0A192F),
+                      MaterialButton(
+                        onPressed: () {
+                          method.launchEmail();
+                        },
+                        child: Card(
+                          elevation: 4.0,
+                          color: const Color(0xff64FFDA),
+                          shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(6.0),
                           ),
-                          child: const Padding(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 8.0,
+                          child: Container(
+                            margin: const EdgeInsets.all(0.85),
+                            height: size.height * 0.10,
+                            width: size.width * 0.30,
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              color: const Color(0xff0A192F),
+                              borderRadius: BorderRadius.circular(6.0),
                             ),
-                            child: Text(
-                              "Say Hello",
-                              style: TextStyle(
-                                color: Color(0xff64FFDA),
+                            child: const Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 8.0,
+                              ),
+                              child: Text(
+                                "Say Hello",
+                                style: TextStyle(
+                                  color: Color(0xff64FFDA),
+                                ),
                               ),
                             ),
                           ),
@@ -476,73 +487,59 @@ class _MobileHomeState extends State<MobileHome> {
                 height: 150,
               ),
 
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.spaceAround,
-              //   children: [
-              //     IconButton(
-              //       icon: const Icon(
-              //         FontAwesomeIcons.github,
-              //         color: Colors.white,
-              //         size: 15.0,
-              //       ),
-              //       onPressed: () {
-              //         method.launchMyURL("https://github.com/champ96k");
-              //       },
-              //     ),
-              //     IconButton(
-              //       icon: const Icon(
-              //         FontAwesomeIcons.linkedin,
-              //         color: Colors.white,
-              //         size: 15.0,
-              //       ),
-              //       onPressed: () {
-              //         method.launchMyURL(
-              //             "https://www.linkedin.com/in/tushar-nikam-a29a97131/");
-              //       },
-              //     ),
-              //     IconButton(
-              //       icon: const Icon(
-              //         FontAwesomeIcons.twitter,
-              //         color: Colors.white,
-              //         size: 15.0,
-              //       ),
-              //       onPressed: () {
-              //         method.launchMyURL("https://twitter.com/champ_96k");
-              //       },
-              //     ),
-              //     IconButton(
-              //       icon: const Icon(
-              //         Icons.mail,
-              //         color: Colors.white,
-              //         size: 15.0,
-              //       ),
-              //       onPressed: () {
-              //         method.launchEmail();
-              //       },
-              //     )
-              //   ],
-              // ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  IconButton(
+                    icon: const Icon(
+                      FontAwesomeIcons.github,
+                      color: Colors.white,
+                      size: 15.0,
+                    ),
+                    onPressed: () {
+                      method.launchMyURL("https://github.com/letsclode");
+                    },
+                  ),
+                  IconButton(
+                    icon: const Icon(
+                      FontAwesomeIcons.linkedin,
+                      color: Colors.white,
+                      size: 15.0,
+                    ),
+                    onPressed: () {
+                      method.launchMyURL(
+                          "https://www.linkedin.com/in/cloderaldo-pampanga-2098a4162/");
+                    },
+                  ),
+                  IconButton(
+                    icon: const Icon(
+                      FontAwesomeIcons.stackOverflow,
+                      color: Colors.white,
+                      size: 15.0,
+                    ),
+                    onPressed: () {
+                      method.launchMyURL(
+                          "https://stackoverflow.com/users/5813279/clode-morales-pampanga-iii");
+                    },
+                  ),
+                  IconButton(
+                    icon: const Icon(
+                      Icons.mail,
+                      color: Colors.white,
+                      size: 15.0,
+                    ),
+                    onPressed: () {
+                      method.launchEmail();
+                    },
+                  )
+                ],
+              ),
 
-              // SizedBox(
-              //   height: size.height * 0.07,
-              // ),
+              SizedBox(
+                height: size.height * 0.07,
+              ),
 
               // //Footer
-              // Container(
-              //   alignment: Alignment.center,
-              //   height: MediaQuery.of(context).size.height / 6,
-              //   width: MediaQuery.of(context).size.width,
-              //   //color: Colors.white,
-              //   child: Text(
-              //     "Designed & Built by Tushar Nikam 💙 Flutter",
-              //     textAlign: TextAlign.center,
-              //     style: TextStyle(
-              //       color: Colors.white.withOpacity(0.4),
-              //       letterSpacing: 1.75,
-              //       fontSize: 14.0,
-              //     ),
-              //   ),
-              // ),
             ],
           ),
         ),
