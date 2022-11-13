@@ -309,7 +309,7 @@ class _MobileHomeState extends State<MobileHome> {
                         width: size.width * 0.6,
                         child: const Image(
                           fit: BoxFit.cover,
-                          image: AssetImage("images/pic1.jpeg"),
+                          image: AssetImage("images/profile.jpg"),
                         ),
                       ),
                     ],

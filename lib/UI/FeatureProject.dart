@@ -140,10 +140,10 @@ class FeatureProject extends StatelessWidget {
 
                 // Gitub Link
                 Positioned(
-                  top: size.height * 0.42,
+                  top: 0,
                   right: 10.0,
                   child: SizedBox(
-                    height: size.height * 0.08,
+                    height: size.height * 0.2,
                     width: size.width * 0.25,
                     // color: Colors.indigo,
                     child: Row(

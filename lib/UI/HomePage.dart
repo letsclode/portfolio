@@ -349,7 +349,7 @@ class _HomePageState extends State<HomePage> {
                                         height: size.height * 0.04,
                                       ),
                                       FeatureProject(
-                                        imagePath: "images/pic9.png",
+                                        imagePath: "images/work2.png",
                                         ontab: () {
                                           method.launchMyURL(
                                               "https://play.google.com/store/apps/details?id=com.ohm.myassistantv2&hl=en&gl=US");
@@ -362,7 +362,7 @@ class _HomePageState extends State<HomePage> {
                                         tech3: "Flutter UI",
                                       ),
                                       FeatureProject(
-                                        imagePath: "images/pic2.png",
+                                        imagePath: "images/work1.png",
                                         ontab: () {
                                           method.launchMyURL(
                                               "https://play.google.com/store/apps/details?id=com.grauffel.eg_czacademy");
